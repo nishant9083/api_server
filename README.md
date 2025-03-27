@@ -18,8 +18,8 @@ Ensure you have the following installed:
 
 ### 1. Clone the repository
 ```sh
-git clone https://github.com/yourusername/your-repository.git
-cd your-repository
+git clone https://github.com/nishant9083/api_server.git
+cd api_server
 ```
 
 ### 2. Install dependencies
@@ -57,11 +57,19 @@ _Response:_
 ```sh
 curl -X POST http://localhost:3000/api/users/person -H "Content-Type: application/json" -d '{"name": "Jane Doe", "age": 28, "gender": "Female", "mobile": "9876543210"}'
 ```
+_Response:_
+```json
+  { "_id": "660d9a5e4f1a2b3456789abc", "name": "Jane Doe", "age": 28, "gender": "Female", "mobile": "9876543210" }
+```
 
 ### 3. Update a person
 **PUT /api/users/:id**
 ```sh
-curl -X PUT http://localhost:3000/api/users/660d9a5e4f1a2b3456789abc -H "Content-Type: application/json" -d '{"name": "John Smith", "age": 32}'
+curl -X PUT http://localhost:3000/api/users/660d9a5e4f1a2b3456789abc -H "Content-Type: application/json" -d '{"name": "John Smith", "age": 32,  "gender": "Male", "mobile": "1234567890"}'
+```
+_Response:_
+```json
+  { "_id": "660d9a5e4f1a2b3456789abc", "name": "John Smith", "age": 32, "gender": "Male", "mobile": "1234567890" }
 ```
 
 ### 4. Delete a person
